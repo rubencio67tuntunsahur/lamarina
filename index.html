@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Falla La Marina · Asociación Cultural</title>
+<meta name="description" content="Falla La Marina · Associació Cultural del Puerto de Sagunto. Tradición, fuego y alegría valenciana: noticias, eventos, galería y Portal del Fallero.">
+<link rel="icon" type="image/png" href="escudo2.png">
+<link rel="apple-touch-icon" href="escudo2.png">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#081a33">
+<meta property="og:title" content="Falla La Marina · Asociación Cultural">
+<meta property="og:description" content="Tradición, fuego y alegría valenciana. Una falla con alma de mar y corazón de pueblo.">
+<meta property="og:image" content="escudo2.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,800;1,9..144,400;1,9..144,600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <a href="#inicio" class="nav-logo">
+    <img src="escudo2.png" alt="Escudo Falla La Marina" onerror="this.style.display='none'">
+    <span>Falla La Marina<small>Asociación Cultural</small></span>
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#historia" onclick="cerrarMenu()">Historia</a></li>
+    <li><a href="#noticias" onclick="cerrarMenu()">Noticias</a></li>
+    <li><a href="#actividades" onclick="cerrarMenu()">Actividades</a></li>
+    <li><a href="#calendario" onclick="cerrarMenu()">Eventos</a></li>
+    <li><a href="#falles" onclick="cerrarMenu()">Les Falles</a></li>
+    <li><a href="#falleros" onclick="cerrarMenu()">Falleros</a></li>
+    <li><a href="#carnet" onclick="cerrarMenu()">Carnet</a></li>
+    <li><a href="#galeria" onclick="cerrarMenu()">Galería</a></li>
+    <li class="nav-sep" aria-hidden="true"></li>
+    <li><button class="nav-idioma-btn" onclick="cambiarIdioma()" title="Cambiar a valenciano">🌐 VA</button></li>
+    <li><a href="#contacto" class="nav-cta" onclick="cerrarMenu()">Únete</a></li>
+    <li class="nav-portal-mobile"><button class="nav-portal-btn" onclick="cerrarMenu();abrirPortal()">🏛️ Portal Fallero</button></li>
+  </ul>
+  <button class="nav-hamburguesa" id="navHamburguesa" onclick="toggleMenu()" aria-label="Menú">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- BADGE ADMIN -->
+<div class="admin-badge" id="adminBadge">🔐 Modo Administrador Activo</div>
+
+<!-- HERO -->
+<section id="inicio">
+  <div class="hero-bg" aria-hidden="true">
+    <div class="hero-foto" id="heroFoto"></div>
+    <div class="hero-glow hero-glow-mar"></div>
+    <div class="hero-glow hero-glow-foc"></div>
+    <div class="hero-grano"></div>
+    <div class="hero-chispas"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+  </div>
+
+  <div class="hero-inner">
+    <div class="hero-content">
+      <p class="hero-subtitulo"><span class="hero-punto"></span>Associació Cultural · Valencia</p>
+      <h1>Falla<br><span>La Marina</span></h1>
+      <p class="hero-desc">Tradición, fuego y alegría valenciana. Una falla con alma de mar y corazón de pueblo, celebrando la fiesta más grande del mundo.</p>
+      <div class="hero-btns">
+        <a href="#falles" class="btn-primario">🔥 Cuenta Atrás</a>
+        <button class="btn-secundario" onclick="abrirPortal()">🏛️ Portal del Fallero</button>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat"><strong>325+</strong><span>Falleros Adultos</span></div>
+        <div class="hero-stat"><strong>60+</strong><span>Falleros Infantiles</span></div>
+        <div class="hero-stat"><strong>79+</strong><span>Años de Historia</span></div>
+      </div>
+    </div>
+
+    <div class="hero-visual" aria-hidden="true">
+      <div class="hero-orbita hero-orbita-1"></div>
+      <div class="hero-orbita hero-orbita-2"></div>
+      <div class="hero-disco">
+        <img src="escudo-transparente.png" alt="" class="hero-escudo" onerror="this.style.display='none'">
+      </div>
+      <div class="hero-flota hero-flota-1">⚓</div>
+      <div class="hero-flota hero-flota-2">🔥</div>
+      <div class="hero-flota hero-flota-3">🌸</div>
+    </div>
+  </div>
+
+  <a href="#historia" class="scroll-hint">Descubre</a>
+
+  <svg class="hero-ola" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0,64 C180,110 360,20 540,48 C720,76 900,120 1080,96 C1260,72 1350,40 1440,56 L1440,120 L0,120 Z"/>
+  </svg>
+</section>
+
+<!-- CINTA -->
+<div class="cinta" aria-hidden="true">
+  <div class="cinta-pista">
+    <span>Tradició</span><b>⚓</b><span>Foc</span><b>✦</b><span>Mar</span><b>🔥</b><span>Germanor</span><b>✦</b><span>Festa</span><b>⚓</b><span>Cultura</span><b>✦</b><span>Ofrena</span><b>🔥</b><span>Mascletà</span><b>✦</b>
+    <span>Tradició</span><b>⚓</b><span>Foc</span><b>✦</b><span>Mar</span><b>🔥</b><span>Germanor</span><b>✦</b><span>Festa</span><b>⚓</b><span>Cultura</span><b>✦</b><span>Ofrena</span><b>🔥</b><span>Mascletà</span><b>✦</b>
+  </div>
+</div>
+
+<!-- HISTORIA -->
+<section id="historia">
+  <div class="historia-grid container">
+    <div class="historia-escudo-wrap reveal">
+      <div class="historia-arco">
+        <img src="escudo-transparente.png" alt="Escudo Falla La Marina" onerror="this.outerHTML='<div style=\'font-size:6rem;text-align:center\'>⚓</div>'">
+      </div>
+      <div class="historia-sello"><strong>+79</strong><span>años de historia</span></div>
+    </div>
+    <div class="historia-texto reveal">
+      <div class="seccion-titulo alineado-izq">
+        <span class="etiqueta">Nuestros Orígenes</span>
+        <h2>Una historia de fuego y tradición</h2>
+        <p>Desde nuestra fundación, la Falla La Marina ha sido símbolo de la cultura valenciana en el barrio.</p>
+      </div>
+      <h3>Raíces en el barrio</h3>
+      <p>La Falla La Marina nació con el espíritu de los falleros que aman su tierra y sus tradiciones. El ancla de nuestro escudo representa la vinculación con el mar, con el esfuerzo y con la firmeza de nuestra identidad valenciana.</p>
+      <p>Año tras año, nuestros falleros y falleras trabajan con ilusión para crear una falla que refleje los valores de nuestra comunidad: creatividad, crítica y festejo.</p>
+      <p>Las dos banderas de nuestro escudo —la española y la valenciana— simbolizan el orgullo de nuestras raíces y la unión de nuestros falleros bajo el mismo sueño.</p>
+      <div class="historia-datos">
+        <div class="dato-destacado"><strong>+79</strong> años de historia</div>
+        <div class="dato-destacado"><strong>🏆</strong> Premios en Sección Especial</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NOTICIAS -->
+<section id="noticias">
+  <div class="seccion-titulo reveal">
+    <span class="etiqueta">Actualidad</span>
+    <h2>Últimas Noticias</h2>
+    <p>Mantente al día con todo lo que ocurre en la Falla La Marina. Haz clic en una noticia para leerla completa.</p>
+  </div>
+  <div class="noticias-grid container" id="noticias-grid">
+    <!-- Se renderizan desde JS -->
+  </div>
+</section>
+
+<!-- ACTIVIDADES -->
+<section id="actividades">
+  <div class="seccion-titulo reveal">
+    <span class="etiqueta">Todo el año</span>
+    <h2>Nuestras Actividades</h2>
+    <p>Mucho más que una falla. Somos una familia que celebra todo el año.</p>
+  </div>
+  <div class="actividades-grid container">
+    <div class="actividad-card reveal"><span class="actividad-icono">🔥</span><h3>Mascletàs</h3><p>Vibramos cada mediodía con la pólvora y el fuego en las fiestas grandes de marzo.</p></div>
+    <div class="actividad-card reveal"><span class="actividad-icono">🌸</span><h3>Ofrenda</h3><p>Llevamos flores a la Virgen con todo el orgullo de nuestra comisión engalanada.</p></div>
+    <div class="actividad-card reveal"><span class="actividad-icono">🍽️</span><h3>Paellas y Cenas</h3><p>Nos reunimos a comer juntos durante todo el año. La mejor excusa para estar en familia.</p></div>
+    <div class="actividad-card reveal"><span class="actividad-icono">⚽</span><h3>Deportes</h3><p>Campeonatos y actividades deportivas para los falleros de todas las edades.</p></div>
+    <div class="actividad-card reveal"><span class="actividad-icono">🎉</span><h3>Fiestas</h3><p>Verbenas, bailes y celebraciones para que el espíritu fallero dure todo el año.</p></div>
+    <div class="actividad-card reveal"><span class="actividad-icono">👶</span><h3>Infantil</h3><p>Actividades especiales para los más pequeños de la falla, los falleros del futuro.</p></div>
+    <div class="actividad-card reveal"><span class="actividad-icono">🎭</span><h3>Cultura</h3><p>Tradiciones, actos culturales y actividades que mantienen viva la esencia fallera durante todo el año.</p></div>
+    <div class="actividad-card reveal"><span class="actividad-icono">😎</span><h3>Remember</h3><p>La fiesta del año con música remember, temazos inolvidables y baile sin parar hasta el último minuto.</p></div>
+  </div>
+</section>
+
+<!-- CALENDARIO DE EVENTOS -->
+<section id="calendario">
+  <div class="seccion-titulo reveal">
+    <span class="etiqueta">Agenda Fallera</span>
+    <h2>Calendario de Eventos</h2>
+    <p>Todos los actos y eventos de la Falla La Marina. ¡No te pierdas ninguno!</p>
+  </div>
+  <div class="calendario-wrap reveal">
+    <div class="calendario-card">
+      <div class="cal-nav">
+        <button class="cal-btn-nav" onclick="cambiarMes(-1)" aria-label="Mes anterior">‹</button>
+        <h3 id="calTitulo"></h3>
+        <button class="cal-btn-nav" onclick="cambiarMes(1)" aria-label="Mes siguiente">›</button>
+      </div>
+      <div class="cal-grid" id="calGrid">
+        <div class="cal-dia-lbl">Lun</div>
+        <div class="cal-dia-lbl">Mar</div>
+        <div class="cal-dia-lbl">Mié</div>
+        <div class="cal-dia-lbl">Jue</div>
+        <div class="cal-dia-lbl">Vie</div>
+        <div class="cal-dia-lbl">Sáb</div>
+        <div class="cal-dia-lbl">Dom</div>
+      </div>
+    </div>
+
+    <!-- Próximos eventos lista -->
+    <div class="proximos-eventos">
+      <h4>📅 Próximos Eventos</h4>
+      <div id="proximosEventosLista"></div>
+
+      <!-- Panel admin (visible sólo en modo admin) -->
+      <div class="admin-panel" id="adminCalendario" style="display:none;">
+        <h4>Gestión de Eventos</h4>
+        <button class="admin-btn" onclick="abrirModalEvento()">➕ Añadir nuevo evento</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CUENTA ATRÁS -->
+<section id="falles">
+  <div class="falles-fondo" aria-hidden="true"><div class="falles-llama"></div><div class="falles-llama falles-llama-2"></div></div>
+  <div class="falles-inner reveal">
+    <span class="etiqueta">Les Falles</span>
+    <h2>🔥 Cuenta atrás para Les Falles 2027</h2>
+    <p>El fuego más esperado del año. La noche en que todo arde.</p>
+    <div class="countdown">
+      <div class="count-unit"><div class="num" id="cd-dias">--</div><div class="lbl">Días</div></div>
+      <div class="count-unit"><div class="num" id="cd-horas">--</div><div class="lbl">Horas</div></div>
+      <div class="count-unit"><div class="num" id="cd-min">--</div><div class="lbl">Min</div></div>
+      <div class="count-unit"><div class="num" id="cd-seg">--</div><div class="lbl">Seg</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FALLEROS -->
+<section id="falleros">
+  <div class="seccion-titulo reveal">
+    <span class="etiqueta">Nuestra Gente</span>
+    <h2>Los Falleros de La Marina</h2>
+    <p>Una gran familia unida por la tradición y el amor a les falles.</p>
+  </div>
+  <div class="falleros-stats container">
+    <div class="stat-card reveal"><div class="stat-num">325+</div><div class="stat-label">Falleros Adultos</div></div>
+    <div class="stat-card reveal"><div class="stat-num">60+</div><div class="stat-label">Falleros Infantiles</div></div>
+    <div class="stat-card reveal"><div class="stat-num">79+</div><div class="stat-label">Años de Historia</div></div>
+    <div class="stat-card reveal"><div class="stat-num">🏆</div><div class="stat-label">Premios Obtenidos</div></div>
+  </div>
+  <div class="seccion-titulo subtitulo reveal">
+    <h2>Representantes</h2>
+  </div>
+  <div class="junta-grid container" id="junta-grid">
+    <!-- Se renderiza desde JS: renderRepresentantes() -->
+  </div>
+</section>
+
+<!-- CARNET FALLERO -->
+<section id="carnet">
+  <div class="seccion-titulo reveal">
+    <span class="etiqueta">Tu Identidad Fallera</span>
+    <h2>🪪 Genera tu Carnet Fallero</h2>
+    <p>Crea tu carnet digital y tu marco para Instagram personalizados. ¡Descárgalos y compártelos!</p>
+  </div>
+  <div class="carnet-wrap container reveal">
+
+    <!-- FORMULARIO -->
+    <div class="carnet-form">
+      <div class="carnet-campo">
+        <label>Nombre completo</label>
+        <input type="text" id="carnet-nombre" placeholder="Ej: María García López" maxlength="40"
+          oninput="previsualizarCarnet();previsualizarMarco()">
+      </div>
+      <div class="carnet-campo">
+        <label>Cargo o categoría</label>
+        <select id="carnet-cargo" onchange="previsualizarCarnet();previsualizarMarco()">
+          <option value="Fallero/a">Fallero/a</option>
+          <option value="Fallero/a Infantil">Fallero/a Infantil</option>
+          <option value="Junta Directiva">Junta Directiva</option>
+          <option value="President">President</option>
+          <option value="Fallera Major">Fallera Major</option>
+          <option value="Fallera Major Infantil">Fallera Major Infantil</option>
+          <option value="Presidenta Infantil">Presidenta Infantil</option>
+          <option value="Secretari/a">Secretari/a</option>
+          <option value="Tresorer/a">Tresorer/a</option>
+          <option value="Vocal">Vocal</option>
+        </select>
+      </div>
+      <div class="carnet-campo">
+        <label>Ejercicio</label>
+        <select id="carnet-anyo" onchange="previsualizarCarnet();previsualizarMarco()">
+          <option value="2025–2026">2025–2026</option>
+          <option value="2026–2027" selected>2026–2027</option>
+          <option value="2027–2028">2027–2028</option>
+        </select>
+      </div>
+      <div class="carnet-campo">
+        <label>Tu foto <span class="opcional">(opcional)</span></label>
+        <label class="carnet-foto-label" for="carnet-foto-input">
+          📷 Subir foto de perfil
+          <input type="file" id="carnet-foto-input" accept="image/*" style="display:none"
+            onchange="cargarFotoFallero(this)">
+        </label>
+      </div>
+      <div class="carnet-campo">
+        <label>Color del carnet</label>
+        <div class="carnet-colores">
+          <button class="carnet-color-btn activo" data-bg="#0d3a6e" data-txt="#ffffff" onclick="elegirColorCarnet(this)" style="background:#0d3a6e;" title="Azul marino"></button>
+          <button class="carnet-color-btn" data-bg="#7b1c1c" data-txt="#ffffff" onclick="elegirColorCarnet(this)" style="background:#7b1c1c;" title="Rojo fallero"></button>
+          <button class="carnet-color-btn" data-bg="#1a3a1a" data-txt="#ffffff" onclick="elegirColorCarnet(this)" style="background:#1a3a1a;" title="Verde"></button>
+          <button class="carnet-color-btn" data-bg="#2c1a4a" data-txt="#ffffff" onclick="elegirColorCarnet(this)" style="background:#2c1a4a;" title="Morado"></button>
+          <button class="carnet-color-btn" data-bg="#1a1a1a" data-txt="#f0c040" onclick="elegirColorCarnet(this)" style="background:#1a1a1a;" title="Negro dorado"></button>
+        </div>
+      </div>
+      <div class="carnet-botones">
+        <button class="btn-descargar-carnet" onclick="descargarCarnet()">⬇️ Descargar carnet</button>
+        <!-- MARCO INSTAGRAM OCULTO TEMPORALMENTE.
+             Para volver a activarlo, descomenta el botón de abajo. -->
+        <!-- <button class="btn-descargar-marco" onclick="descargarMarco()">📸 Marco Instagram</button> -->
+      </div>
+    </div>
+
+    <!-- PREVISUALIZACIONES -->
+    <div class="carnet-previews">
+      <div class="carnet-preview-wrap">
+        <p class="carnet-preview-label">🪪 Carnet fallero</p>
+        <canvas id="carnetCanvas" width="560" height="340"></canvas>
+      </div>
+      <!-- MARCO INSTAGRAM OCULTO TEMPORALMENTE.
+           Para volver a activarlo, descomenta el bloque de abajo
+           (el código JS que lo genera ya sigue funcionando solo). -->
+      <!--
+      <div class="carnet-preview-wrap">
+        <p class="carnet-preview-label">📸 Marco para Instagram</p>
+        <canvas id="marcoCanvas" width="600" height="600"></canvas>
+      </div>
+      -->
+    </div>
+
+  </div>
+</section>
+
+<!-- GALERÍA -->
+<section id="galeria">
+  <div class="seccion-titulo reveal">
+    <span class="etiqueta">Recuerdos</span>
+    <h2>Galería de Imágenes</h2>
+    <p>Momentos únicos de nuestra falla a lo largo de los años.</p>
+  </div>
+  <div class="galeria-grid container" id="galeria-grid-portada">
+    <!-- Se renderiza desde JS: renderGaleriaPortada() -->
+  </div>
+  <button class="galeria-ver-mas" onclick="abrirGaleria()">Ver galería completa</button>
+</section>
+
+<!-- CONTACTO -->
+<section id="contacto">
+  <div class="seccion-titulo reveal">
+    <span class="etiqueta">Únete a Nosotros</span>
+    <h2>Contacta con la Falla</h2>
+    <p>¿Quieres ser fallero/a? ¿Tienes alguna pregunta? Escríbenos.</p>
+  </div>
+
+  <div class="contacto-grid container">
+    <div class="contacto-col reveal">
+      <div class="contacto-info">
+        <h3>Información de contacto</h3>
+        <div class="info-item">
+          <span class="info-icon">📍</span>
+          <p><strong>Dirección</strong>Carrer Espronceda 36 · Puerto de Sagunto, Valencia</p>
+        </div>
+        <div class="info-item">
+          <span class="info-icon">📧</span>
+          <p><strong>Email</strong><a href="mailto:fallalamarina@gmail.com">fallalamarina@gmail.com</a></p>
+        </div>
+        <div class="info-item">
+          <span class="info-icon">🕐</span>
+          <p><strong>Casal Fallero</strong>Lunes 18:30 – 20:00</p>
+        </div>
+        <div class="redes">
+          <a href="#" class="red-btn">📘 Facebook</a>
+          <a href="#" class="red-btn">📷 Instagram</a>
+        </div>
+      </div>
+      <div class="contacto-mapa">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3071.5847190081954!2d-0.21897302335780233!3d39.659059671571484!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd601604e7414ea9%3A0x8e09ba9f96b2c71!2sFalla%20La%20Marina!5e0!3m2!1ses!2spl!4v1777290086270!5m2!1ses!2spl" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Mapa Falla La Marina"></iframe>
+      </div>
+    </div>
+
+    <div class="contacto-form reveal">
+      <div class="form-group">
+        <label>Nombre completo</label>
+        <input type="text" placeholder="Tu nombre y apellidos" id="f-nombre">
+      </div>
+      <div class="form-group">
+        <label>Correo electrónico</label>
+        <input type="email" placeholder="tu@email.com" id="f-email">
+      </div>
+      <div class="form-group">
+        <label>Motivo del contacto</label>
+        <select id="f-motivo">
+          <option value="">Selecciona una opción...</option>
+          <option value="info">Información general</option>
+          <option value="colaboracion">Colaboración o patrocinio</option>
+          <option value="otro">Otro</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Mensaje</label>
+        <textarea placeholder="Escribe tu mensaje aquí..." id="f-mensaje"></textarea>
+      </div>
+      <button class="btn-enviar" onclick="enviarForm()">Enviar Mensaje ✉️</button>
+      <div class="msg-exito" id="msg-exito" style="display:none;">✅ ¡Mensaje enviado! Nos pondremos en contacto contigo pronto.</div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner container">
+    <div class="footer-marca">
+      <img src="escudo2.png" alt="Falla La Marina" onerror="this.style.display='none'">
+      <p><strong>Asociación Cultural Falla La Marina</strong><br>Carrer de La Marina · Valencia, España<br>© 2026 Falla La Marina · Tots els drets reservats</p>
+    </div>
+    <div class="footer-links">
+      <a href="#inicio">Inicio</a>
+      <a href="#historia">Historia</a>
+      <a href="#actividades">Actividades</a>
+      <a href="#calendario">Eventos</a>
+      <a href="#falles">Les Falles</a>
+      <a href="#contacto">Contacto</a>
+    </div>
+  </div>
+  <div class="footer-gigante" aria-hidden="true">La Marina</div>
+  <p class="footer-credit">Diseñado y desarrollado por <span>César Castellanos Ruiz</span></p>
+</footer>
+
+<!-- ═══════════════════════════════════════════
+     BANNER COOKIES / PRIVACIDAD
+═══════════════════════════════════════════ -->
+<div id="cookieBanner" role="dialog" aria-live="polite" aria-label="Aviso de privacidad">
+  <div class="cookie-inner">
+    <div class="cookie-texto">
+      <span class="cookie-icono">🍪</span>
+      <p>
+        Esta web utiliza cookies propias para mejorar tu experiencia de navegación.
+        Al continuar, aceptas nuestra
+        <button class="cookie-link" onclick="abrirTerminos()">Política de Privacidad y Términos de Uso</button>.
+      </p>
+    </div>
+    <div class="cookie-btns">
+      <button class="cookie-btn-rechazar" onclick="rechazarCookies()">Solo necesarias</button>
+      <button class="cookie-btn-aceptar" onclick="aceptarCookies()">Aceptar todo ✓</button>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     MODAL: TÉRMINOS Y POLÍTICA DE PRIVACIDAD
+═══════════════════════════════════════════ -->
+<div class="modal-overlay" id="modalTerminos">
+  <div class="modal-box" style="max-width:680px;">
+    <div class="modal-header">
+      <h2>📋 Términos de Uso y Política de Privacidad</h2>
+      <button class="modal-cerrar" onclick="cerrarModal('modalTerminos')">✕</button>
+    </div>
+    <div class="modal-body terminos-body">
+
+      <p class="terminos-update">Última actualización: mayo de 2025</p>
+
+      <h3>1. Quiénes somos</h3>
+      <p>La presente web es propiedad de la <strong>Asociación Cultural Falla La Marina</strong>, con domicilio social en Carrer Espronceda 36, Puerto de Sagunto (Valencia), España. Correo de contacto: <strong>fallalamarina@gmail.com</strong>.</p>
+      <p>Somos una asociación cultural sin ánimo de lucro cuyo fin es la promoción, difusión y celebración de las Fallas de Valencia y de la cultura valenciana en general.</p>
+
+      <h3>2. Uso de la web</h3>
+      <p>Esta web tiene una finalidad exclusivamente <strong>informativa y de servicio a los falleros</strong> de la Falla La Marina. A través de ella podrás consultar noticias, eventos, información de la junta directiva, galería de imágenes y acceder al Portal del Fallero para inscribirte en actividades.</p>
+      <p>Queda prohibido el uso de esta web con fines comerciales, fraudulentos o contrarios a la legislación vigente. La asociación se reserva el derecho a restringir el acceso en caso de uso indebido.</p>
+
+      <h3>3. Portal del Fallero</h3>
+      <p>El acceso al Portal del Fallero está restringido a los miembros en regla de la Asociación Cultural Falla La Marina. Las credenciales de acceso son personales e intransferibles. Si has olvidado tus datos de acceso, contacta con la comisión directamente en el casal o por correo electrónico.</p>
+
+      <h3>4. Protección de datos (RGPD)</h3>
+      <p>De conformidad con el <strong>Reglamento (UE) 2016/679</strong> (RGPD) y la Ley Orgánica 3/2018 de Protección de Datos Personales (LOPDGDD), te informamos de lo siguiente:</p>
+      <ul class="terminos-lista">
+        <li><strong>Responsable del tratamiento:</strong> Asociación Cultural Falla La Marina.</li>
+        <li><strong>Finalidad:</strong> Gestión de socios, inscripciones a actividades, comunicaciones internas de la falla y atención de consultas recibidas por el formulario de contacto.</li>
+        <li><strong>Base legítima:</strong> Relación asociativa con los falleros y consentimiento expreso para el resto de comunicaciones.</li>
+        <li><strong>Destinatarios:</strong> Los datos no se ceden a terceros salvo obligación legal.</li>
+        <li><strong>Conservación:</strong> Mientras dure la relación asociativa o hasta que solicites su supresión.</li>
+        <li><strong>Derechos:</strong> Puedes ejercer tus derechos de acceso, rectificación, supresión, portabilidad y oposición escribiendo a <strong>fallalamarina@gmail.com</strong>.</li>
+      </ul>
+
+      <h3>5. Cookies</h3>
+      <p>Esta web utiliza únicamente <strong>cookies técnicas o estrictamente necesarias</strong> para el correcto funcionamiento del sitio (preferencias de usuario, sesión del portal). No utilizamos cookies de seguimiento, publicidad ni analítica de terceros.</p>
+      <p>Puedes configurar tu navegador para bloquear o eliminar las cookies en cualquier momento, aunque esto podría afectar al funcionamiento de algunas funciones del portal.</p>
+
+      <h3>6. Menores de edad</h3>
+      <p>Esta web puede ser visitada por menores de edad que sean falleros infantiles. No recopilamos datos personales de menores sin el consentimiento expreso de sus padres o tutores legales. Si detectas que se han recogido datos de un menor sin consentimiento, contáctanos para proceder a su eliminación.</p>
+
+      <h3>7. Propiedad intelectual</h3>
+      <p>Todos los contenidos de esta web (textos, imágenes, diseño, logotipos) son propiedad de la Asociación Cultural Falla La Marina o se utilizan con la debida autorización. Queda prohibida su reproducción total o parcial sin autorización expresa.</p>
+
+      <h3>8. Modificaciones</h3>
+      <p>La asociación se reserva el derecho a modificar estos términos en cualquier momento para adaptarlos a cambios legislativos o de funcionamiento de la web. Los cambios se publicarán en esta misma página con la fecha de actualización.</p>
+
+      <h3>9. Contacto</h3>
+      <p>Para cualquier consulta sobre estos términos o sobre el tratamiento de tus datos, puedes escribirnos a <strong>fallalamarina@gmail.com</strong> o acercarte al casal en nuestro horario habitual.</p>
+
+      <div class="terminos-footer-btns">
+        <button class="cookie-btn-rechazar" onclick="cerrarModal('modalTerminos');rechazarCookies()">Solo necesarias</button>
+        <button class="cookie-btn-aceptar" onclick="cerrarModal('modalTerminos');aceptarCookies()">Acepto los términos ✓</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- BOTÓN ADMIN FLOTANTE -->
+<button class="btn-admin-flotante" id="btnAdminFlotante" onclick="toggleAdmin()">
+  🔐 Admin
+</button>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<!-- ═══════════════════════════════════════════
+     MODAL: LOGIN ADMINISTRADOR
+═══════════════════════════════════════════ -->
+<div class="modal-overlay" id="modalAdminLogin">
+  <div class="modal-box" style="max-width:420px;">
+    <div class="modal-header">
+      <h2>🔐 Acceso Administrador</h2>
+      <button class="modal-cerrar" onclick="cerrarModal('modalAdminLogin')">✕</button>
+    </div>
+    <div class="modal-body">
+      <p class="modal-intro">Introduce tus credenciales de administrador para continuar.</p>
+      <div>
+        <label class="campo-label">Usuario</label>
+        <input type="text" id="admin-usuario" placeholder="Usuario" autocomplete="username" class="login-input"
+          onkeydown="if(event.key==='Enter')document.getElementById('admin-pass').focus()">
+      </div>
+      <div>
+        <label class="campo-label">Contraseña</label>
+        <input type="password" id="admin-pass" placeholder="Contraseña" autocomplete="current-password" class="login-input"
+          onkeydown="if(event.key==='Enter')loginAdmin()">
+      </div>
+      <div id="admin-login-error" class="login-error">❌ Usuario o contraseña incorrectos</div>
+      <button class="btn-primario btn-bloque" onclick="loginAdmin()">Entrar</button>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     MODAL: PORTAL DEL FALLERO
+═══════════════════════════════════════════ -->
+<div class="modal-overlay" id="modalPortal">
+  <div class="modal-box">
+    <div class="modal-header">
+      <h2>🏛️ Portal del Fallero</h2>
+      <button class="modal-cerrar" onclick="cerrarModal('modalPortal')">✕</button>
+    </div>
+    <div class="modal-body">
+
+      <!-- ── PANTALLA DE LOGIN ── -->
+      <div id="portal-login-screen">
+
+<!-- CARGA EXCEL LOCAL (solo fallback) -->
+
+        <div class="login-fallero-wrap">
+          <h3>🔑 Acceso Falleros</h3>
+          <p>Introduce tus credenciales para acceder al portal de inscripciones.</p>
+          <label class="campo-label">Usuario</label>
+          <input class="login-input" type="text" id="fallero-usuario" placeholder="Tu usuario" autocomplete="username"
+            onkeydown="if(event.key==='Enter')document.getElementById('fallero-pass').focus()">
+          <label class="campo-label">Contraseña</label>
+          <input class="login-input" type="password" id="fallero-pass" placeholder="Tu contraseña" autocomplete="current-password"
+            onkeydown="if(event.key==='Enter')loginFallero()">
+          <div class="login-error" id="fallero-login-error">❌ Usuario o contraseña incorrectos</div>
+          <button class="btn-primario" onclick="loginFallero()" style="width:100%;">Entrar al Portal →</button>
+          <p style="margin-top:1rem;font-size:0.8rem;color:var(--texto-suave);text-align:center;">¿No tienes acceso? Contacta con la comisión.</p>
+        </div>
+      </div>
+
+      <!-- ── PORTAL (tras login) ── -->
+      <div id="portal-contenido" style="display:none;">
+        <div class="portal-logueado-info">
+          <span>👤 Bienvenido/a, <strong id="portal-nombre-usuario">—</strong></span>
+          <span style="display:flex;gap:8px;">
+            <button class="btn-logout" onclick="cambiarPassword()">🔑 Cambiar contraseña</button>
+            <button class="btn-logout" onclick="logoutFallero()">Cerrar sesión</button>
+          </span>
+        </div>
+
+        <div class="portal-tabs">
+          <button class="portal-tab activo" onclick="cambiarTab('tab-eventos')">📅 Próximos Eventos</button>
+          <button class="portal-tab" onclick="cambiarTab('tab-inscribirse')">✍️ Inscribirse</button>
+          <button class="portal-tab" onclick="cambiarTab('tab-misapuntes')">🗂️ Mis Inscripciones</button>
+          <button class="portal-tab" id="tab-admin-btn" style="display:none;" onclick="cambiarTab('tab-admin-inscripciones')">🔐 Inscripciones</button>
+        </div>
+
+        <!-- TAB: EVENTOS -->
+        <div class="portal-seccion activo" id="tab-eventos">
+          <p style="color:var(--texto-suave);margin-bottom:1.5rem;font-size:0.9rem;">Apúntate a los próximos actos de la falla. Haz clic en <strong>Apuntarme</strong> para inscribirte directamente.</p>
+          <div id="listaEventosPortal"></div>
+        </div>
+
+        <!-- TAB: INSCRIPCIÓN MANUAL -->
+        <div class="portal-seccion" id="tab-inscribirse">
+          <p style="color:var(--texto-suave);margin-bottom:1.5rem;font-size:0.9rem;">Selecciona el evento y confirma tu inscripción.</p>
+          <div class="form-inscripcion">
+            <div class="campo">
+              <label>Evento al que quieres apuntarte</label>
+              <select id="ins-evento">
+                <option value="">Selecciona un evento...</option>
+              </select>
+            </div>
+            <div class="campo"><label>Comentarios o necesidades especiales</label><textarea id="ins-comentarios" placeholder="Alergias, necesidades especiales, acompañantes..."></textarea></div>
+            <button class="btn-primario" onclick="enviarInscripcion()" style="width:100%;margin-top:0.5rem;">Enviar Inscripción ✓</button>
+          </div>
+        </div>
+
+        <!-- TAB: MIS APUNTES -->
+        <div class="portal-seccion" id="tab-misapuntes">
+          <p style="color:var(--texto-suave);margin-bottom:1.5rem;font-size:0.9rem;">Aquí aparecen los eventos a los que te has apuntado tú y los miembros de tu familia.</p>
+          <div id="misInscripciones">
+            <p style="color:var(--texto-suave);font-style:italic;text-align:center;padding:2rem;">Aún no te has apuntado a ningún evento.</p>
+          </div>
+        </div>
+
+        <!-- TAB: ADMIN - VER INSCRIPCIONES (solo admin) -->
+        <div class="portal-seccion" id="tab-admin-inscripciones">
+          <div class="admin-inscripciones-wrap">
+            <h4>📋 Todas las Inscripciones</h4>
+            <div style="display:flex;gap:1rem;align-items:center;flex-wrap:wrap;margin-bottom:1rem;">
+              <select class="filtro-evento-select" id="filtro-evento-admin" onchange="renderAdminInscripciones()" style="flex:1;min-width:200px;">
+                <option value="">Todos los eventos</option>
+              </select>
+              <button class="btn-exportar-xlsx" onclick="exportarInscripcionesXLSX()">📥 Exportar Excel</button>
+            </div>
+            <div id="admin-inscripciones-lista">
+              <p style="color:var(--texto-suave);font-style:italic;text-align:center;padding:2rem;">Aún no hay inscripciones registradas.</p>
+            </div>
+            <div id="admin-inscripciones-total" style="font-size:0.85rem;color:var(--texto-suave);margin-top:0.5rem;"></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     MODAL: NOTICIA COMPLETA
+═══════════════════════════════════════════ -->
+<div class="modal-overlay" id="modalNoticia">
+  <div class="modal-box">
+    <div class="modal-header" id="modalNoticiaHeader">
+      <h2 id="modalNoticiaTitulo">Noticia</h2>
+      <button class="modal-cerrar" onclick="cerrarModal('modalNoticia')">✕</button>
+    </div>
+    <div class="modal-body" id="modalNoticiaBody">
+      <!-- Contenido dinámico -->
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     MODAL: FICHA DE REPRESENTANTE
+═══════════════════════════════════════════ -->
+<div class="modal-overlay" id="modalRepresentante">
+  <div class="modal-box" style="max-width:520px;">
+    <div class="modal-header">
+      <h2 id="repModalCargo">Representante</h2>
+      <button class="modal-cerrar" onclick="cerrarModal('modalRepresentante')">✕</button>
+    </div>
+    <div class="modal-body" id="repModalBody">
+      <!-- Contenido dinámico -->
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     MODAL: GALERÍA COMPLETA
+═══════════════════════════════════════════ -->
+<div class="modal-overlay" id="modalGaleria">
+  <div class="modal-box" style="max-width:900px;">
+    <div class="modal-header">
+      <h2>📷 Galería de Imágenes</h2>
+      <button class="modal-cerrar" onclick="cerrarModal('modalGaleria')">✕</button>
+    </div>
+    <div class="modal-body" id="galModalBody">
+      <!-- Contenido dinámico -->
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     MODAL: AÑADIR / EDITAR EVENTO
+═══════════════════════════════════════════ -->
+<div class="modal-overlay" id="modalEvento">
+  <div class="modal-box" style="max-width:560px;">
+    <div class="modal-header">
+      <h2 id="modalEventoTitulo">Nuevo Evento</h2>
+      <button class="modal-cerrar" onclick="cerrarModal('modalEvento')">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="form-evento">
+        <input type="hidden" id="ev-id">
+        <div class="campo"><label>Nombre del evento *</label><input type="text" id="ev-nombre" placeholder="Ej: Paella de falla"></div>
+        <div class="form-row">
+          <div class="campo"><label>Fecha *</label><input type="date" id="ev-fecha"></div>
+          <div class="campo"><label>Hora</label><input type="time" id="ev-hora"></div>
+        </div>
+        <div class="campo"><label>Lugar</label><input type="text" id="ev-lugar" placeholder="Ej: Casal Fallero"></div>
+        <div class="campo"><label>Descripción</label><textarea id="ev-descripcion" placeholder="Describe el evento..."></textarea></div>
+        <div class="campo">
+          <label>Categoría</label>
+          <select id="ev-categoria">
+            <option value="general">General</option>
+            <option value="especial">Especial / Destacado</option>
+            <option value="infantil">Infantil</option>
+            <option value="falla">Acto Fallero</option>
+          </select>
+        </div>
+        <div class="campo">
+          <label>Color en calendario</label>
+          <div class="color-opciones">
+            <div class="color-chip seleccionado" style="background:var(--azul-medio)" data-color="azul" onclick="seleccionarColor(this)"></div>
+            <div class="color-chip" style="background:var(--dorado)" data-color="dorado" onclick="seleccionarColor(this)"></div>
+            <div class="color-chip" style="background:var(--rojo-falla)" data-color="rojo" onclick="seleccionarColor(this)"></div>
+            <div class="color-chip" style="background:#27ae60" data-color="verde" onclick="seleccionarColor(this)"></div>
+          </div>
+          <input type="hidden" id="ev-color" value="azul">
+        </div>
+        <div style="display:flex;gap:1rem;margin-top:1.5rem;">
+          <button class="admin-btn" onclick="guardarEvento()" style="flex:1;justify-content:center;">💾 Guardar</button>
+          <button class="admin-btn peligro" onclick="cerrarModal('modalEvento')" style="flex:0;">Cancelar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════
+     MODAL: INSCRIBIR TAMBIÉN A LA FAMILIA
+     ═══════════════════════════════════════════ -->
+<div class="modal-overlay" id="modalFamilia">
+  <div class="modal-box" style="max-width:520px;">
+    <div class="modal-header">
+      <h2>👨‍👩‍👧 Apuntar a tu familia</h2>
+      <button class="modal-cerrar" onclick="cerrarModal('modalFamilia')">✕</button>
+    </div>
+    <div class="modal-body form-inscripcion">
+      <p id="familia-evento" style="font-weight:700;color:var(--azul-oscuro);margin-bottom:0.3rem;"></p>
+      <p style="color:var(--texto-suave);font-size:0.9rem;">¿Quieres apuntar también a alguien de tu familia? Marca a todos los que quieras inscribir.</p>
+      <div class="familia-lista" id="familia-lista"></div>
+      <div class="campo">
+        <label>Comentarios o necesidades especiales</label>
+        <textarea id="familia-comentarios" placeholder="Alergias, necesidades especiales..."></textarea>
+      </div>
+      <div class="familia-acciones">
+        <button class="btn-primario" id="familia-confirmar" onclick="confirmarInscripcionFamilia()">Inscribir ✓</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js" defer></script>
+<script src="js/app.js"></script>
+<script src="js/enhance.js"></script>
+</body>
+</html>
